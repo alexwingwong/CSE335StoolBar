@@ -18,7 +18,11 @@
 		C4489154292726AF00485FCB /* LiveBetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4489153292726AF00485FCB /* LiveBetsController.swift */; };
 		C44891582927303700485FCB /* BasketballController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44891572927303700485FCB /* BasketballController.swift */; };
 		C448915C292735F200485FCB /* BasketballTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448915B292735F200485FCB /* BasketballTableViewCell.swift */; };
-		C448915E292736CA00485FCB /* BasketballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448915D292736CA00485FCB /* BasketballGame.swift */; };
+		C4660F8C2928172C00CBF209 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F8B2928172C00CBF209 /* Game.swift */; };
+		C4660F8E29281A6C00CBF209 /* FootballController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F8D29281A6C00CBF209 /* FootballController.swift */; };
+		C4660F9029281A8500CBF209 /* FootballTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F8F29281A8500CBF209 /* FootballTableViewCell.swift */; };
+		C4660F9229281ECC00CBF209 /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F9129281ECC00CBF209 /* Bet.swift */; };
+		C4660F94292821E900CBF209 /* LiveBetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +39,11 @@
 		C4489153292726AF00485FCB /* LiveBetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBetsController.swift; sourceTree = "<group>"; };
 		C44891572927303700485FCB /* BasketballController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballController.swift; sourceTree = "<group>"; };
 		C448915B292735F200485FCB /* BasketballTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballTableViewCell.swift; sourceTree = "<group>"; };
-		C448915D292736CA00485FCB /* BasketballGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballGame.swift; sourceTree = "<group>"; };
+		C4660F8B2928172C00CBF209 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		C4660F8D29281A6C00CBF209 /* FootballController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballController.swift; sourceTree = "<group>"; };
+		C4660F8F29281A8500CBF209 /* FootballTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballTableViewCell.swift; sourceTree = "<group>"; };
+		C4660F9129281ECC00CBF209 /* Bet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
+		C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBetsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 		C44891382927171800485FCB /* CSE335StoolBar */ = {
 			isa = PBXGroup;
 			children = (
+				C4660F8A2928171A00CBF209 /* GamesAndBets */,
 				C448915629272FAF00485FCB /* Football */,
 				C448915529272FA200485FCB /* Basketball */,
 				C448915029271FA700485FCB /* Profile */,
@@ -88,6 +97,7 @@
 			children = (
 				C448915129271FB800485FCB /* ProfileController.swift */,
 				C4489153292726AF00485FCB /* LiveBetsController.swift */,
+				C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -97,7 +107,6 @@
 			children = (
 				C44891572927303700485FCB /* BasketballController.swift */,
 				C448915B292735F200485FCB /* BasketballTableViewCell.swift */,
-				C448915D292736CA00485FCB /* BasketballGame.swift */,
 			);
 			path = Basketball;
 			sourceTree = "<group>";
@@ -105,8 +114,19 @@
 		C448915629272FAF00485FCB /* Football */ = {
 			isa = PBXGroup;
 			children = (
+				C4660F8D29281A6C00CBF209 /* FootballController.swift */,
+				C4660F8F29281A8500CBF209 /* FootballTableViewCell.swift */,
 			);
 			path = Football;
+			sourceTree = "<group>";
+		};
+		C4660F8A2928171A00CBF209 /* GamesAndBets */ = {
+			isa = PBXGroup;
+			children = (
+				C4660F8B2928172C00CBF209 /* Game.swift */,
+				C4660F9129281ECC00CBF209 /* Bet.swift */,
+			);
+			path = GamesAndBets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,12 +201,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C448915C292735F200485FCB /* BasketballTableViewCell.swift in Sources */,
+				C4660F8C2928172C00CBF209 /* Game.swift in Sources */,
 				C448915229271FB800485FCB /* ProfileController.swift in Sources */,
 				C448913E2927171800485FCB /* ViewController.swift in Sources */,
+				C4660F9029281A8500CBF209 /* FootballTableViewCell.swift in Sources */,
 				C448913A2927171800485FCB /* AppDelegate.swift in Sources */,
+				C4660F8E29281A6C00CBF209 /* FootballController.swift in Sources */,
+				C4660F9229281ECC00CBF209 /* Bet.swift in Sources */,
 				C448913C2927171800485FCB /* SceneDelegate.swift in Sources */,
 				C44891442927171800485FCB /* CSE335StoolBar.xcdatamodeld in Sources */,
-				C448915E292736CA00485FCB /* BasketballGame.swift in Sources */,
+				C4660F94292821E900CBF209 /* LiveBetsTableViewCell.swift in Sources */,
 				C4489154292726AF00485FCB /* LiveBetsController.swift in Sources */,
 				C44891582927303700485FCB /* BasketballController.swift in Sources */,
 			);

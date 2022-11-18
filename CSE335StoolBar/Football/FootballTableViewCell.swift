@@ -1,5 +1,5 @@
 //
-//  BasketballTableViewCell.swift
+//  FootballTableViewCell.swift
 //  CSE335StoolBar
 //
 //  Created by Alexander Wong on 11/17/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BasketballTableViewCell: UITableViewCell {
+class FootballTableViewCell: UITableViewCell {
     
     weak var game: Game?;
 

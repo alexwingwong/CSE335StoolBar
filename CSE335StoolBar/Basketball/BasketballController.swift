@@ -7,15 +7,14 @@
 
 // used this video to implement table view:
 // https://www.youtube.com/watch?v=FtO5QT2D_H8
-
+    
 
 import Foundation
 import UIKit
 
 class BasketballController: UIViewController{
 
-    var games: [BasketballGame] = [];
-    
+    var games: [Game] = [];
 
     @IBOutlet weak var BasketballTableView: UITableView!
     
@@ -29,13 +28,13 @@ class BasketballController: UIViewController{
         
     }
     
-    func initDummyData() -> [BasketballGame]{
-        var tempGames: [BasketballGame] = [];
+    func initDummyData() -> [Game]{
+        var tempGames: [Game] = [];
         
-        let g1 = BasketballGame(t1: "PHX", t2: "BKN", timeString: "10PM", so1: "+20, +150", so2: "-20, -150", mo1: "Phx +215", mo2: "BKN -290", oo: "O 125, -108", uo: "U 125, +150");
-        let g2 = BasketballGame(t1: "GSW", t2: "DAL", timeString: "8PM", so1: "+20, +150", so2: "-20, -150", mo1: "GSW +215", mo2: "DAL -290", oo: "O 125, -108", uo: "U 125, +150");
-        let g3 = BasketballGame(t1: "GSW", t2: "DAL", timeString: "8PM", so1: "+20, +150", so2: "-20, -150", mo1: "GSW +215", mo2: "DAL -290", oo: "O 125, -108", uo: "U 125, +150");
-        let g4 = BasketballGame(t1: "GSW", t2: "DAL", timeString: "8PM", so1: "+20, +150", so2: "-20, -150", mo1: "GSW +215", mo2: "DAL -290", oo: "O 125, -108", uo: "U 125, +150");
+        let g1 = Game(t1: "PHX", t2: "BKN", timeString: "10PM", ss1: "+20, +150", ss2: "-20, -150", ms1: "Phx +215", ms2: "BKN -290", os: "O 125, -108", us: "U 125, +150", so1: 150.0, so2:-150.0, mo1: 215.0, mo2: -290.0, oo: -108, uo: +150);
+        let g2 = Game(t1: "DAL", t2: "LAC", timeString: "10PM", ss1: "+20, +130", ss2: "-20, -130", ms1: "Phx +215", ms2: "BKN -290", os: "O 125, -108", us: "U 125, +150", so1: 150.0, so2:-150.0, mo1: 215.0, mo2: -290.0, oo: -108, uo: +150);
+        let g3 = Game(t1: "PHX", t2: "BKN", timeString: "10PM", ss1: "+20, +150", ss2: "-20, -150", ms1: "Phx +215", ms2: "BKN -290", os: "O 125, -108", us: "U 125, +150", so1: 150.0, so2:-150.0, mo1: 215.0, mo2: -290.0, oo: -108, uo: +150);
+        let g4 = Game(t1: "PHX", t2: "BKN", timeString: "10PM", ss1: "+20, +150", ss2: "-20, -150", ms1: "Phx +215", ms2: "BKN -290", os: "O 125, -108", us: "U 125, +150", so1: 150.0, so2:-150.0, mo1: 215.0, mo2: -290.0, oo: -108, uo: +150);
         
         tempGames.append(g1);
         tempGames.append(g2);
@@ -60,6 +59,4 @@ extension BasketballController: UITableViewDataSource, UITableViewDelegate{
         
         return cell;
     }
-    
-    
 }
