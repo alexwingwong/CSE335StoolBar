@@ -5,6 +5,10 @@
 //  Created by Alexander Wong on 11/17/22.
 //
 
+// used this video to implement table view:
+// https://www.youtube.com/watch?v=FtO5QT2D_H8
+
+
 import Foundation
 import UIKit
 
