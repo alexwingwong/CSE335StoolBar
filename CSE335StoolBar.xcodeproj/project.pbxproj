@@ -14,6 +14,11 @@
 		C44891442927171800485FCB /* CSE335StoolBar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C44891422927171800485FCB /* CSE335StoolBar.xcdatamodeld */; };
 		C44891462927171A00485FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44891452927171A00485FCB /* Assets.xcassets */; };
 		C44891492927171A00485FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44891472927171A00485FCB /* LaunchScreen.storyboard */; };
+		C448915229271FB800485FCB /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448915129271FB800485FCB /* ProfileController.swift */; };
+		C4489154292726AF00485FCB /* LiveBetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4489153292726AF00485FCB /* LiveBetsController.swift */; };
+		C44891582927303700485FCB /* BasketballController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44891572927303700485FCB /* BasketballController.swift */; };
+		C448915C292735F200485FCB /* BasketballTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448915B292735F200485FCB /* BasketballTableViewCell.swift */; };
+		C448915E292736CA00485FCB /* BasketballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448915D292736CA00485FCB /* BasketballGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		C44891452927171A00485FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C44891482927171A00485FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C448914A2927171A00485FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C448915129271FB800485FCB /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		C4489153292726AF00485FCB /* LiveBetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBetsController.swift; sourceTree = "<group>"; };
+		C44891572927303700485FCB /* BasketballController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballController.swift; sourceTree = "<group>"; };
+		C448915B292735F200485FCB /* BasketballTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballTableViewCell.swift; sourceTree = "<group>"; };
+		C448915D292736CA00485FCB /* BasketballGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,9 @@
 		C44891382927171800485FCB /* CSE335StoolBar */ = {
 			isa = PBXGroup;
 			children = (
+				C448915629272FAF00485FCB /* Football */,
+				C448915529272FA200485FCB /* Basketball */,
+				C448915029271FA700485FCB /* Profile */,
 				C44891392927171800485FCB /* AppDelegate.swift */,
 				C448913B2927171800485FCB /* SceneDelegate.swift */,
 				C448913D2927171800485FCB /* ViewController.swift */,
@@ -68,6 +81,32 @@
 				C44891422927171800485FCB /* CSE335StoolBar.xcdatamodeld */,
 			);
 			path = CSE335StoolBar;
+			sourceTree = "<group>";
+		};
+		C448915029271FA700485FCB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C448915129271FB800485FCB /* ProfileController.swift */,
+				C4489153292726AF00485FCB /* LiveBetsController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C448915529272FA200485FCB /* Basketball */ = {
+			isa = PBXGroup;
+			children = (
+				C44891572927303700485FCB /* BasketballController.swift */,
+				C448915B292735F200485FCB /* BasketballTableViewCell.swift */,
+				C448915D292736CA00485FCB /* BasketballGame.swift */,
+			);
+			path = Basketball;
+			sourceTree = "<group>";
+		};
+		C448915629272FAF00485FCB /* Football */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Football;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +180,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C448915C292735F200485FCB /* BasketballTableViewCell.swift in Sources */,
+				C448915229271FB800485FCB /* ProfileController.swift in Sources */,
 				C448913E2927171800485FCB /* ViewController.swift in Sources */,
 				C448913A2927171800485FCB /* AppDelegate.swift in Sources */,
 				C448913C2927171800485FCB /* SceneDelegate.swift in Sources */,
 				C44891442927171800485FCB /* CSE335StoolBar.xcdatamodeld in Sources */,
+				C448915E292736CA00485FCB /* BasketballGame.swift in Sources */,
+				C4489154292726AF00485FCB /* LiveBetsController.swift in Sources */,
+				C44891582927303700485FCB /* BasketballController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
