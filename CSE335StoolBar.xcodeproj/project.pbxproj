@@ -23,6 +23,8 @@
 		C4660F9029281A8500CBF209 /* FootballTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F8F29281A8500CBF209 /* FootballTableViewCell.swift */; };
 		C4660F9229281ECC00CBF209 /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F9129281ECC00CBF209 /* Bet.swift */; };
 		C4660F94292821E900CBF209 /* LiveBetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */; };
+		C4A7435029298C80008F9356 /* BetHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7434F29298C80008F9356 /* BetHistoryController.swift */; };
+		C4A7435229298EAF008F9356 /* BetHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7435129298EAF008F9356 /* BetHistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		C4660F8F29281A8500CBF209 /* FootballTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballTableViewCell.swift; sourceTree = "<group>"; };
 		C4660F9129281ECC00CBF209 /* Bet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
 		C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBetsTableViewCell.swift; sourceTree = "<group>"; };
+		C4A7434F29298C80008F9356 /* BetHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetHistoryController.swift; sourceTree = "<group>"; };
+		C4A7435129298EAF008F9356 /* BetHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetHistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				C448915129271FB800485FCB /* ProfileController.swift */,
 				C4489153292726AF00485FCB /* LiveBetsController.swift */,
 				C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */,
+				C4A7434F29298C80008F9356 /* BetHistoryController.swift */,
+				C4A7435129298EAF008F9356 /* BetHistoryTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A7435029298C80008F9356 /* BetHistoryController.swift in Sources */,
 				C448915C292735F200485FCB /* BasketballTableViewCell.swift in Sources */,
 				C4660F8C2928172C00CBF209 /* Game.swift in Sources */,
 				C448915229271FB800485FCB /* ProfileController.swift in Sources */,
@@ -212,6 +219,7 @@
 				C44891442927171800485FCB /* CSE335StoolBar.xcdatamodeld in Sources */,
 				C4660F94292821E900CBF209 /* LiveBetsTableViewCell.swift in Sources */,
 				C4489154292726AF00485FCB /* LiveBetsController.swift in Sources */,
+				C4A7435229298EAF008F9356 /* BetHistoryTableViewCell.swift in Sources */,
 				C44891582927303700485FCB /* BasketballController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
