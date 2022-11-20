@@ -9,8 +9,6 @@ import UIKit
 
 class FootballTableViewCell: UITableViewCell {
     
-    static private var resultString:String = "";
-    
     weak var game: Game?;
 
     @IBOutlet weak var GameTitle: UILabel!
@@ -46,16 +44,16 @@ class FootballTableViewCell: UITableViewCell {
     @objc func spread1Button(_ sender:UIButton!){
         print("spread1")
         if(game == nil){
-            FootballTableViewCell.resultString = "Error Creating Bet, game not found";
+            print("Error Creating Bet, game not found")
             return;
         }
         
         let betValue = getBetAmount();
         if(betValue == -1){
-            FootballTableViewCell.resultString = "Error: Invalid Bet Amount";
+        print("Error: Invalid Bet Amount")
             return;
         }
-        FootballTableViewCell.resultString = "Bet Added, \(game?.spreadString1)"
+        print("Bet Added, \(game?.spreadString1 ?? "nil")");
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.spreadOdds1)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.spreadOdds1, inputBetType: game!.spreadString1, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
@@ -186,6 +184,7 @@ class FootballTableViewCell: UITableViewCell {
         return result;
     }
     
+    /*
     // following this tutorial
     //https://www.youtube.com/watch?v=yVwQ7oWMxnk
     func showAlert(){
@@ -196,11 +195,7 @@ class FootballTableViewCell: UITableViewCell {
         //present(alert, animated: true);
     }
     func showActionSheet(){
-        
     }
-    
-    static func getResultString() -> String{
-        return FootballTableViewCell.resultString;
-    }
+     */
 }
 
