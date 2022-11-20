@@ -23,8 +23,8 @@ class BetHistoryController: UITableViewController {
     }
     
     func initDummyData() -> [Bet]{
-        var tempBets: [Bet] = [];
-        
+        let tempBets: [Bet] = [];
+        /*
         let b1 = Bet(t1: "PHX", t2: "BKN", timeString: "10PM", o: 150, betT: "PHX +20, +150, 69420", betA: 10000, p: 15000, bo: true, bw: true);
         let b2 = Bet(t1: "PHX", t2: "BKN", timeString: "10PM", o: 150, betT: "PHX +20, +150", betA: 10000, p: 15000, bo: false, bw: false);
         let b3 = Bet(t1: "PHX", t2: "BKN", timeString: "10PM", o: 150, betT: "PHX +20, +150", betA: 10000, p: 15000, bo: false, bw: false);
@@ -33,6 +33,7 @@ class BetHistoryController: UITableViewController {
         //tempBets.append(b2);
         //tempBets.append(b3);
         //tempBets.append(b4);
+        */
         return tempBets;
     }
     
@@ -48,5 +49,9 @@ class BetHistoryController: UITableViewController {
         cell.setBet(bet: bet);
         
         return cell;
+    }
+    
+    static func addBet(newBet: Bet){
+        
     }
 }

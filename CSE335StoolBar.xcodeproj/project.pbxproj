@@ -25,6 +25,7 @@
 		C4660F94292821E900CBF209 /* LiveBetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */; };
 		C4A7435029298C80008F9356 /* BetHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7434F29298C80008F9356 /* BetHistoryController.swift */; };
 		C4A7435229298EAF008F9356 /* BetHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7435129298EAF008F9356 /* BetHistoryTableViewCell.swift */; };
+		C4A7435529299365008F9356 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7435429299365008F9356 /* ProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C4660F93292821E900CBF209 /* LiveBetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBetsTableViewCell.swift; sourceTree = "<group>"; };
 		C4A7434F29298C80008F9356 /* BetHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetHistoryController.swift; sourceTree = "<group>"; };
 		C4A7435129298EAF008F9356 /* BetHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		C4A7435429299365008F9356 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		C44891382927171800485FCB /* CSE335StoolBar */ = {
 			isa = PBXGroup;
 			children = (
+				C4A743532929933C008F9356 /* Models */,
 				C4660F8A2928171A00CBF209 /* GamesAndBets */,
 				C448915629272FAF00485FCB /* Football */,
 				C448915529272FA200485FCB /* Basketball */,
@@ -133,6 +136,14 @@
 				C4660F9129281ECC00CBF209 /* Bet.swift */,
 			);
 			path = GamesAndBets;
+			sourceTree = "<group>";
+		};
+		C4A743532929933C008F9356 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4A7435429299365008F9356 /* ProfileModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 				C4489154292726AF00485FCB /* LiveBetsController.swift in Sources */,
 				C4A7435229298EAF008F9356 /* BetHistoryTableViewCell.swift in Sources */,
 				C44891582927303700485FCB /* BasketballController.swift in Sources */,
+				C4A7435529299365008F9356 /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

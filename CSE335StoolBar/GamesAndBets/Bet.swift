@@ -11,7 +11,7 @@ class Bet{
     
     var team1: String;
     var team2: String;
-    var time: String;
+    var gameDateTime: String; // include date !!
     
     var odds: Double;
     var betType: String;
@@ -22,15 +22,15 @@ class Bet{
     var betOver: Bool;
     var betWon: Bool;
     
-    init(t1: String, t2: String, timeString: String, o: Double, betT:String, betA: Double, p: Double, bo: Bool, bw: Bool){
-        team1 = t1;
-        team2 = t2;
-        time = timeString;
-        odds = o;
-        betType = betT;
-        betAmount = betA;
-        payout = p;
-        betOver = bo;
-        betWon = bw;
+    init(Team1: String, Team2: String, GameDateTime: String, Odds: Double, BetType:String, BetAmount: Double, Payout: Double, BetOver: Bool, BetWon: Bool){
+        team1 = Team1;
+        team2 = Team2;
+        gameDateTime = GameDateTime;
+        odds = Odds;
+        betType = BetType;
+        betAmount = BetAmount;
+        payout = Payout;
+        betOver = BetOver;
+        betWon = BetWon;
     }
 }

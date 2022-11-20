@@ -15,7 +15,7 @@ class LiveBetsTableViewCell: UITableViewCell{
     
     func setBet(bet: Bet){
         self.bet = bet;
-        let resultString: String = "\(bet.team1) vs. \(bet.team2), $\(bet.betAmount), \(bet.betType)";
+        let resultString: String = "\(bet.team1) vs. \(bet.team2), Bet: \(bet.betType), Amount Bet: \(bet.betAmount), Payout: \(bet.payout)";
         BetText.text = resultString;
         BetText.numberOfLines = 0;
         /*
