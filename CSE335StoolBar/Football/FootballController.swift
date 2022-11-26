@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 
-class FootballController: UIViewController{
-
-    var games: [Game] = [];
+class FootballController: UIViewController
+{
+    var allFootballGames:[Games]? //Games from the API
+    
+    var games: [Game] = []; //Games loaded into the TableView
     static private var wagerAmount: String = "";
     @IBOutlet weak var FootballTableView: UITableView!
     
@@ -18,8 +20,6 @@ class FootballController: UIViewController{
         print(sender.text)
         FootballController.wagerAmount = sender.text ?? "no value";
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,22 @@ class FootballController: UIViewController{
     
     func initDummyData() -> [Game]{
         var tempGames: [Game] = [];
-        let g1 = Game(Team1: "BUF", Team2: "KC", GameDateTime: "10PM", SpreadString1: "BUF -1.5, -102", SpreadString2: "KC +1.5, -128", MoneyString1: "BUF -120", MoneyString2: "KC -106", OverString: "O 20.5, -114", UnderString: "U 20.5, -114", SpreadOdds1: -102, SpreadOdds2: 128, MoneyOdds1: -120, MoneyOdds2: -106, OverOdds: -114, UnderOdds: -114)
+        let g1 = Game(
+            Team1: allFootballGames?[1].away_team ?? "Away Team",
+            Team2: allFootballGames?[1].home_team ?? "Home Team",
+            GameDateTime: "10PM",
+            SpreadString1: "BUF -1.5, -102",
+            SpreadString2: "KC +1.5, -128",
+            MoneyString1: "BUF -120",
+            MoneyString2: "KC -106",
+            OverString: "O 20.5, -114",
+            UnderString: "U 20.5, -114",
+            SpreadOdds1: (allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].price)!,
+            SpreadOdds2: (allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].price)!,
+            MoneyOdds1: (allFootballGames?[0].bookmakers[0].markets[0].outcomes[0].price)!,
+            MoneyOdds2: (allFootballGames?[0].bookmakers[0].markets[0].outcomes[1].price)!,
+            OverOdds: (allFootballGames?[0].bookmakers[0].markets[2].outcomes[0].price)!,
+            UnderOdds: (allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].price)!)
         tempGames.append(g1);
         return tempGames;
     }
@@ -39,7 +54,6 @@ class FootballController: UIViewController{
     static func getWagerAmountText() -> String{
         return wagerAmount;
     }
-    
 }
 
 extension FootballController: UITableViewDataSource, UITableViewDelegate{
