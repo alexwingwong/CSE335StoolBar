@@ -32,8 +32,8 @@ class BasketballController: UIViewController{
     
     func initDummyData() -> [Game]{
         var tempGames: [Game] = [];
-        let g1 = Game(Team1: "PHX", Team2: "DAL", GameDateTime: "10PM", SpreadString1: "BUF -1.5, -102", SpreadString2: "KC +1.5, -128", MoneyString1: "BUF -120", MoneyString2: "KC -106", OverString: "O 20.5, -114", UnderString: "U 20.5, -114", SpreadOdds1: -102, SpreadOdds2: 128, MoneyOdds1: -120, MoneyOdds2: -106, OverOdds: -114, UnderOdds: -114)
-        tempGames.append(g1);
+        //let g1 = Game(Team1: "PHX", Team2: "DAL", GameDateTime: "10PM", SpreadString1: "BUF -1.5, -102", SpreadString2: "KC +1.5, -128", MoneyString1: "BUF -120", MoneyString2: "KC -106", OverString: "O 20.5, -114", UnderString: "U 20.5, -114", SpreadOdds1: -102, SpreadOdds2: 128, MoneyOdds1: -120, MoneyOdds2: -106, OverOdds: -114, UnderOdds: -114)
+        //tempGames.append(g1);
         return tempGames;
     }
     

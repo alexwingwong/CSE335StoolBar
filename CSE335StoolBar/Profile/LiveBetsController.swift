@@ -24,7 +24,7 @@ class LiveBetsController: UITableViewController {
     
     func initDummyData() -> [Bet]{
         var tempBets: [Bet] = [];
-        let b1 = Bet(Team1: "PHX", Team2: "BNK", GameDateTime: "11/19/22 @10PM", Odds: 150, BetType: "PHX +20, +150", BetAmount: 10000, Payout: 15000, BetOver: false, BetWon: false);
+        //let b1 = Bet(Team1: "PHX", Team2: "BNK", GameDateTime: "11/19/22 @10PM", Odds: 150, BetType: "PHX +20, +150", BetAmount: 10000, Payout: 15000, BetOver: false, BetWon: false);
         /*
         let b1 = Bet(t1: "PHX", t2: "BKN", timeString: "10PM", o: 150, betT: "PHX +20, +150", betA: 10000, p: 15000, bo: true, bw: true);
         let b2 = Bet(t1: "PHX", t2: "BKN", timeString: "10PM", o: 150, betT: "PHX +20, +150", betA: 10000, p: 15000, bo: false, bw: false);
@@ -35,7 +35,7 @@ class LiveBetsController: UITableViewController {
         tempBets.append(b3);
         tempBets.append(b4);
         */
-        tempBets.append(b1);
+        //tempBets.append(b1);
         return tempBets;
     }
     
