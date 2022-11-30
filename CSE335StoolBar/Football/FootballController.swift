@@ -16,8 +16,8 @@ class FootballController: UIViewController
     static private var wagerAmount: String = "";
     @IBOutlet weak var FootballTableView: UITableView!
     
-    @IBAction func setWagerAmount(_ sender: UITextField) {
-        print(sender.text)
+    @IBAction func setWagerAmount(_ sender: UITextField)
+    {
         FootballController.wagerAmount = sender.text ?? "no value";
     }
     
@@ -35,12 +35,12 @@ class FootballController: UIViewController
             Team1: allFootballGames?[0].away_team ?? "Away Team",
             Team2: allFootballGames?[0].home_team ?? "Home Team",
             GameDateTime: allFootballGames?[0].commence_time ?? "Time",
-            SpreadString1: "\((allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].name)!):  \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].point)!), \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].price)!)",
-            SpreadString2: "\((allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].name)!): \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].point)!), \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].price)!)",
-            MoneyString1: "\((allFootballGames?[0].bookmakers[0].markets[0].outcomes[0].name)!): \((allFootballGames?[0].bookmakers[0].markets[0].outcomes[0].price)!)",
-            MoneyString2: "\((allFootballGames?[0].bookmakers[0].markets[0].outcomes[1].name)!): \((allFootballGames?[0].bookmakers[0].markets[0].outcomes[1].price)!)",
-            OverString: "\((allFootballGames?[0].bookmakers[0].markets[2].outcomes[0].name)!): \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[0].point)!), \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[0].price)!)",
-            UnderString: "\((allFootballGames?[0].bookmakers[0].markets[2].outcomes[1].name)!): \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[1].point)!), \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[1].price)!)",
+            SpreadString1: "\((allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].name)!) \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].point)!), \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].price)!)",
+            SpreadString2: "\((allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].name)!) \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].point)!), \((allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].price)!)",
+            MoneyString1: "\((allFootballGames?[0].bookmakers[0].markets[0].outcomes[0].name)!), \((allFootballGames?[0].bookmakers[0].markets[0].outcomes[0].price)!)",
+            MoneyString2: "\((allFootballGames?[0].bookmakers[0].markets[0].outcomes[1].name)!), \((allFootballGames?[0].bookmakers[0].markets[0].outcomes[1].price)!)",
+            OverString: "\((allFootballGames?[0].bookmakers[0].markets[2].outcomes[0].name)!), \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[0].point)!), \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[0].price)!)",
+            UnderString: "\((allFootballGames?[0].bookmakers[0].markets[2].outcomes[1].name)!), \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[1].point)!), \((allFootballGames?[0].bookmakers[0].markets[2].outcomes[1].price)!)",
             SpreadOdds1: (allFootballGames?[0].bookmakers[0].markets[1].outcomes[0].price)!,
             SpreadOdds2: (allFootballGames?[0].bookmakers[0].markets[1].outcomes[1].price)!,
             MoneyOdds1: (allFootballGames?[0].bookmakers[0].markets[0].outcomes[0].price)!,
@@ -51,12 +51,12 @@ class FootballController: UIViewController
             Team1: allFootballGames?[1].away_team ?? "Away Team",
             Team2: allFootballGames?[1].home_team ?? "Home Team",
             GameDateTime: allFootballGames?[1].commence_time ?? "Time",
-            SpreadString1: "\((allFootballGames?[1].bookmakers[0].markets[1].outcomes[0].name)!): \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[0].point)!), \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[0].price)!)",
-            SpreadString2: "\((allFootballGames?[1].bookmakers[0].markets[1].outcomes[1].name)!): \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[1].point)!), \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[1].price)!)",
-            MoneyString1: "\((allFootballGames?[1].bookmakers[0].markets[0].outcomes[0].name)!): \((allFootballGames?[1].bookmakers[0].markets[0].outcomes[0].price)!)",
-            MoneyString2: "\((allFootballGames?[1].bookmakers[0].markets[0].outcomes[1].name)!): \((allFootballGames?[1].bookmakers[0].markets[0].outcomes[1].price)!)",
-            OverString: "\((allFootballGames?[1].bookmakers[0].markets[2].outcomes[0].name)!): \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[0].point)!), \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[0].price)!)",
-            UnderString: "\((allFootballGames?[1].bookmakers[0].markets[2].outcomes[1].name)!): \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[1].point)!), \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[1].price)!)",
+            SpreadString1: "\((allFootballGames?[1].bookmakers[0].markets[1].outcomes[0].name)!) \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[0].point)!), \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[0].price)!)",
+            SpreadString2: "\((allFootballGames?[1].bookmakers[0].markets[1].outcomes[1].name)!) \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[1].point)!), \((allFootballGames?[1].bookmakers[0].markets[1].outcomes[1].price)!)",
+            MoneyString1: "\((allFootballGames?[1].bookmakers[0].markets[0].outcomes[0].name)!), \((allFootballGames?[1].bookmakers[0].markets[0].outcomes[0].price)!)",
+            MoneyString2: "\((allFootballGames?[1].bookmakers[0].markets[0].outcomes[1].name)!), \((allFootballGames?[1].bookmakers[0].markets[0].outcomes[1].price)!)",
+            OverString: "\((allFootballGames?[1].bookmakers[0].markets[2].outcomes[0].name)!), \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[0].point)!), \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[0].price)!)",
+            UnderString: "\((allFootballGames?[1].bookmakers[0].markets[2].outcomes[1].name)!), \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[1].point)!), \((allFootballGames?[1].bookmakers[0].markets[2].outcomes[1].price)!)",
             SpreadOdds1: (allFootballGames?[1].bookmakers[0].markets[1].outcomes[0].price)!,
             SpreadOdds2: (allFootballGames?[1].bookmakers[0].markets[1].outcomes[1].price)!,
             MoneyOdds1: (allFootballGames?[1].bookmakers[0].markets[0].outcomes[0].price)!,
@@ -67,12 +67,12 @@ class FootballController: UIViewController
             Team1: allFootballGames?[2].away_team ?? "Away Team",
             Team2: allFootballGames?[2].home_team ?? "Home Team",
             GameDateTime: allFootballGames?[2].commence_time ?? "Time",
-            SpreadString1: "\((allFootballGames?[2].bookmakers[2].markets[1].outcomes[0].name)!): \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[0].point)!), \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[0].price)!)",
-            SpreadString2: "\((allFootballGames?[2].bookmakers[2].markets[1].outcomes[1].name)!): \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[1].point)!), \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[1].price)!)",
-            MoneyString1: "\((allFootballGames?[2].bookmakers[2].markets[0].outcomes[0].name)!): \((allFootballGames?[2].bookmakers[2].markets[0].outcomes[0].price)!)",
-            MoneyString2: "\((allFootballGames?[2].bookmakers[2].markets[0].outcomes[1].name)!): \((allFootballGames?[2].bookmakers[2].markets[0].outcomes[1].price)!)",
-            OverString: "\((allFootballGames?[2].bookmakers[2].markets[2].outcomes[0].name)!): \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[0].point)!), \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[0].price)!)",
-            UnderString: "\((allFootballGames?[2].bookmakers[2].markets[2].outcomes[1].name)!): \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[1].point)!), \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[1].price)!)",
+            SpreadString1: "\((allFootballGames?[2].bookmakers[2].markets[1].outcomes[0].name)!) \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[0].point)!), \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[0].price)!)",
+            SpreadString2: "\((allFootballGames?[2].bookmakers[2].markets[1].outcomes[1].name)!) \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[1].point)!), \((allFootballGames?[2].bookmakers[2].markets[1].outcomes[1].price)!)",
+            MoneyString1: "\((allFootballGames?[2].bookmakers[2].markets[0].outcomes[0].name)!), \((allFootballGames?[2].bookmakers[2].markets[0].outcomes[0].price)!)",
+            MoneyString2: "\((allFootballGames?[2].bookmakers[2].markets[0].outcomes[1].name)!), \((allFootballGames?[2].bookmakers[2].markets[0].outcomes[1].price)!)",
+            OverString: "\((allFootballGames?[2].bookmakers[2].markets[2].outcomes[0].name)!), \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[0].point)!), \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[0].price)!)",
+            UnderString: "\((allFootballGames?[2].bookmakers[2].markets[2].outcomes[1].name)!), \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[1].point)!), \((allFootballGames?[2].bookmakers[2].markets[2].outcomes[1].price)!)",
             SpreadOdds1: (allFootballGames?[2].bookmakers[2].markets[1].outcomes[0].price)!,
             SpreadOdds2: (allFootballGames?[2].bookmakers[2].markets[1].outcomes[1].price)!,
             MoneyOdds1: (allFootballGames?[2].bookmakers[2].markets[0].outcomes[0].price)!,

@@ -15,11 +15,12 @@ import UIKit
 class BasketballController: UIViewController
 {
     var allBasketballGames:Basketball?
-    var games: [Game] = [];
+    var games: [Game] = []
     static private var wagerAmount: String = "";
+    
     @IBOutlet weak var BasketballTableView: UITableView!
-    @IBAction func setWagerAmount(_ sender: UITextField) {
-        print(sender.text);
+    @IBAction func setWagerAmount(_ sender: UITextField)
+    {
         BasketballController.wagerAmount = sender.text ?? "no value";
     }
     
@@ -36,19 +37,51 @@ class BasketballController: UIViewController
         let g1 = Game(Team1: (allBasketballGames?.response[0].game.teams.home.name)!,
                       Team2: (allBasketballGames?.response[0].game.teams.away.name)!,
                       GameDateTime: (allBasketballGames?.response[0].game.date)!,
-                      SpreadString1: "BUF -1.5, -102",
-                      SpreadString2: "KC +1.5, -128",
-                      MoneyString1: "BUF -120",
-                      MoneyString2: "KC -106",
-                      OverString: "O 20.5, -114",
-                      UnderString: "U 20.5, -114",
-                      SpreadOdds1: -102,
-                      SpreadOdds2: 128,
-                      MoneyOdds1: -120,
-                      MoneyOdds2: -106,
-                      OverOdds: -114,
-                      UnderOdds: -114)
-        tempGames.append(g1);
+                      SpreadString1: "\((allBasketballGames?.response[0].bookmakers[0].bets[2].values[0].value)!), \((allBasketballGames?.response[0].bookmakers[0].bets[2].values[0].odd)!)",
+                      SpreadString2: "\((allBasketballGames?.response[0].bookmakers[0].bets[2].values[1].value)!), \((allBasketballGames?.response[0].bookmakers[0].bets[2].values[1].odd)!)",
+                      MoneyString1: "\((allBasketballGames?.response[0].game.teams.home.name)!), \((allBasketballGames?.response[0].bookmakers[0].bets[1].values[0].odd)!)",
+                      MoneyString2: "\((allBasketballGames?.response[0].game.teams.away.name)!), \((allBasketballGames?.response[0].bookmakers[0].bets[1].values[1].odd)!)",
+                      OverString: "\((allBasketballGames?.response[0].bookmakers[0].bets[3].values[0].value)!), \((allBasketballGames?.response[0].bookmakers[0].bets[3].values[0].odd)!)",
+                      UnderString: "\((allBasketballGames?.response[0].bookmakers[0].bets[3].values[1].value)!), \((allBasketballGames?.response[0].bookmakers[0].bets[3].values[1].odd)!)",
+                      SpreadOdds1: Double((allBasketballGames?.response[0].bookmakers[0].bets[2].values[0].odd)!)!,
+                      SpreadOdds2: Double((allBasketballGames?.response[0].bookmakers[0].bets[2].values[1].odd)!)!,
+                      MoneyOdds1: Double((allBasketballGames?.response[0].bookmakers[0].bets[1].values[0].odd)!)!,
+                      MoneyOdds2: Double((allBasketballGames?.response[0].bookmakers[0].bets[1].values[1].odd)!)!,
+                      OverOdds: Double((allBasketballGames?.response[0].bookmakers[0].bets[3].values[0].odd)!)!,
+                      UnderOdds: Double((allBasketballGames?.response[0].bookmakers[0].bets[3].values[1].odd)!)!)
+        let g2 = Game(Team1: (allBasketballGames?.response[1].game.teams.home.name)!,
+                      Team2: (allBasketballGames?.response[1].game.teams.away.name)!,
+                      GameDateTime: (allBasketballGames?.response[1].game.date)!,
+                      SpreadString1: "\((allBasketballGames?.response[1].bookmakers[0].bets[2].values[0].value)!), \((allBasketballGames?.response[1].bookmakers[0].bets[2].values[0].odd)!)",
+                      SpreadString2: "\((allBasketballGames?.response[1].bookmakers[0].bets[2].values[1].value)!), \((allBasketballGames?.response[1].bookmakers[0].bets[2].values[1].odd)!)",
+                      MoneyString1: "\((allBasketballGames?.response[1].game.teams.home.name)!), \((allBasketballGames?.response[0].bookmakers[0].bets[1].values[0].odd)!)",
+                      MoneyString2: "\((allBasketballGames?.response[1].game.teams.away.name)!), \((allBasketballGames?.response[0].bookmakers[0].bets[1].values[1].odd)!)",
+                      OverString: "\((allBasketballGames?.response[1].bookmakers[0].bets[3].values[0].value)!), \((allBasketballGames?.response[1].bookmakers[0].bets[3].values[0].odd)!)",
+                      UnderString: "\((allBasketballGames?.response[1].bookmakers[0].bets[3].values[1].value)!), \((allBasketballGames?.response[1].bookmakers[0].bets[3].values[1].odd)!)",
+                      SpreadOdds1: Double((allBasketballGames?.response[1].bookmakers[0].bets[2].values[0].odd)!)!,
+                      SpreadOdds2: Double((allBasketballGames?.response[1].bookmakers[0].bets[2].values[1].odd)!)!,
+                      MoneyOdds1: Double((allBasketballGames?.response[1].bookmakers[0].bets[1].values[0].odd)!)!,
+                      MoneyOdds2: Double((allBasketballGames?.response[1].bookmakers[0].bets[1].values[1].odd)!)!,
+                      OverOdds: Double((allBasketballGames?.response[1].bookmakers[0].bets[3].values[0].odd)!)!,
+                      UnderOdds: Double((allBasketballGames?.response[1].bookmakers[0].bets[3].values[1].odd)!)!)
+        let g3 = Game(Team1: (allBasketballGames?.response[2].game.teams.home.name)!,
+                      Team2: (allBasketballGames?.response[2].game.teams.away.name)!,
+                      GameDateTime: (allBasketballGames?.response[2].game.date)!,
+                      SpreadString1: "\((allBasketballGames?.response[2].bookmakers[0].bets[2].values[0].value)!), \((allBasketballGames?.response[2].bookmakers[0].bets[2].values[0].odd)!)",
+                      SpreadString2: "\((allBasketballGames?.response[2].bookmakers[0].bets[2].values[1].value)!), \((allBasketballGames?.response[2].bookmakers[0].bets[2].values[1].odd)!)",
+                      MoneyString1: "\((allBasketballGames?.response[2].game.teams.home.name)!), \((allBasketballGames?.response[0].bookmakers[0].bets[1].values[0].odd)!)",
+                      MoneyString2: "\((allBasketballGames?.response[2].game.teams.away.name)!), \((allBasketballGames?.response[0].bookmakers[0].bets[1].values[1].odd)!)",
+                      OverString: "\((allBasketballGames?.response[2].bookmakers[0].bets[3].values[0].value)!), \((allBasketballGames?.response[2].bookmakers[0].bets[3].values[0].odd)!)",
+                      UnderString: "\((allBasketballGames?.response[2].bookmakers[0].bets[3].values[1].value)!), \((allBasketballGames?.response[2].bookmakers[0].bets[3].values[1].odd)!)",
+                      SpreadOdds1: Double((allBasketballGames?.response[2].bookmakers[0].bets[2].values[0].odd)!)!,
+                      SpreadOdds2: Double((allBasketballGames?.response[2].bookmakers[0].bets[2].values[1].odd)!)!,
+                      MoneyOdds1: Double((allBasketballGames?.response[2].bookmakers[0].bets[1].values[0].odd)!)!,
+                      MoneyOdds2: Double((allBasketballGames?.response[2].bookmakers[0].bets[1].values[1].odd)!)!,
+                      OverOdds: Double((allBasketballGames?.response[2].bookmakers[0].bets[3].values[0].odd)!)!,
+                      UnderOdds: Double((allBasketballGames?.response[2].bookmakers[0].bets[3].values[1].odd)!)!)
+        tempGames.append(g1)
+        tempGames.append(g2)
+        tempGames.append(g3)
         return tempGames;
     }
     

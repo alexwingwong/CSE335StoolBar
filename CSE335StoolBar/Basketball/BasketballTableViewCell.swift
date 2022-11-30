@@ -24,7 +24,7 @@ class BasketballTableViewCell: UITableViewCell {
     
     func setGame(game: Game){
         self.game = game;
-        GameTitle.text = game.team1 + " VS " + game.team2;
+        GameTitle.text = game.team1 + " vs " + game.team2;
         SpreadTeam1.setTitle(game.spreadString1, for: .normal);
         SpreadTeam2.setTitle(game.spreadString2, for: .normal);
         MoneyTeam1.setTitle(game.moneyString1, for: .normal);
@@ -42,7 +42,6 @@ class BasketballTableViewCell: UITableViewCell {
     }
     
     @objc func spread1Button(_ sender:UIButton!){
-        print("spread1")
         if(game == nil){
             print("Error Creating Bet, game not found")
             return;
@@ -53,15 +52,12 @@ class BasketballTableViewCell: UITableViewCell {
         print("Error: Invalid Bet Amount")
             return;
         }
-        print("Bet Added, \(game?.spreadString1 ?? "nil")");
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.spreadOdds1)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.spreadOdds1, inputBetType: game!.spreadString1, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
-        print("added bet! \(String(describing: game?.spreadString1))")
     }
     
     @objc func spread2Button(_ sender:UIButton!){
-        print("spread2")
         if(game == nil){
             print("Error Creating Bet, game not found");
             return;
@@ -75,11 +71,9 @@ class BasketballTableViewCell: UITableViewCell {
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.spreadOdds2)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.spreadOdds2, inputBetType: game!.spreadString2, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
-        LiveBetsController.addBet(newBet: newBet);
     }
     
     @objc func money1Button(_ sender:UIButton!){
-        print("money1")
         if(game == nil){
             print("Error Creating Bet, game not found");
             return;
@@ -91,12 +85,11 @@ class BasketballTableViewCell: UITableViewCell {
             return;
         }
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.moneyOdds1)
-        let newBet = generateBet(inputgame: game!, inputOdds: game!.moneyOdds1, inputBetType: game!.moneyString2, inputBetAmount: betValue, inputBetPayout: betPayout)
+        let newBet = generateBet(inputgame: game!, inputOdds: game!.moneyOdds1, inputBetType: game!.moneyString1, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
     }
     
     @objc func money2Button(_ sender:UIButton!){
-        print("money2")
         if(game == nil){
             print("Error Creating Bet, game not found");
             return;
@@ -112,7 +105,6 @@ class BasketballTableViewCell: UITableViewCell {
     }
     
     @objc func overButton(_ sender:UIButton!){
-        print("over");
         if(game == nil){
             print("Error Creating Bet, game not found");
             return;
@@ -128,7 +120,6 @@ class BasketballTableViewCell: UITableViewCell {
     }
     
     @objc func underButton(_ sender:UIButton!){
-        print("under");
         if(game == nil){
             print("Error Creating Bet, game not found");
             return;
@@ -144,11 +135,18 @@ class BasketballTableViewCell: UITableViewCell {
         LiveBetsController.addBet(newBet: newBet);
     }
 
-    func calcBetPayout(betAmount: Double, odds: Double) -> Double{
-        if(odds < 0){
+    func calcBetPayout(betAmount: Double, odds: Double) -> Double
+    {
+        if(odds > 1 && odds < 99)
+        {
+            return odds * betAmount;
+        }
+        else if(odds < 0)
+        {
             return (-1.0*100.0/odds * betAmount);
         }
-        else{
+        else
+        {
             return (odds/100 * betAmount);
         }
     }
