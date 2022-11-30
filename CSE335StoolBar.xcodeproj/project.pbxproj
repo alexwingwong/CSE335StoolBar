@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		114D9A3A2931F5EA00DE8A49 /* FootballGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D9A392931F5EA00DE8A49 /* FootballGames.swift */; };
+		BA8DDAC0293560F800961A10 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DDABF293560F800961A10 /* SQLiteDatabase.swift */; };
 		C448913A2927171800485FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44891392927171800485FCB /* AppDelegate.swift */; };
 		C448913C2927171800485FCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448913B2927171800485FCB /* SceneDelegate.swift */; };
 		C448913E2927171800485FCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448913D2927171800485FCB /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		114D9A392931F5EA00DE8A49 /* FootballGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballGames.swift; sourceTree = "<group>"; };
+		BA8DDABF293560F800961A10 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		C44891362927171800485FCB /* CSE335StoolBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE335StoolBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44891392927171800485FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C448913B2927171800485FCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A7435429299365008F9356 /* ProfileModel.swift */,
+				BA8DDABF293560F800961A10 /* SQLiteDatabase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				C448913E2927171800485FCB /* ViewController.swift in Sources */,
 				C4660F9029281A8500CBF209 /* FootballTableViewCell.swift in Sources */,
 				C448913A2927171800485FCB /* AppDelegate.swift in Sources */,
+				BA8DDAC0293560F800961A10 /* SQLiteDatabase.swift in Sources */,
 				C4660F8E29281A6C00CBF209 /* FootballController.swift in Sources */,
 				C4660F9229281ECC00CBF209 /* Bet.swift in Sources */,
 				C448913C2927171800485FCB /* SceneDelegate.swift in Sources */,

@@ -8,7 +8,6 @@
 import Foundation
 
 class Bet{
-    
     var team1: String;
     var team2: String;
     var gameDateTime: String; // include date !!
