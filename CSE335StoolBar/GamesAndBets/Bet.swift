@@ -21,6 +21,7 @@ class Bet{
     
     var betOver: Bool;
     var betWon: Bool;
+    var betID: Int;
     
     init(Team1: String, Team2: String, GameDateTime: String, Odds: Double, BetType:String, BetAmount: Double, Payout: Double, BetOver: Bool, BetWon: Bool){
         team1 = Team1;
@@ -32,5 +33,6 @@ class Bet{
         payout = Payout;
         betOver = BetOver;
         betWon = BetWon;
+        betID = 0
     }
 }
