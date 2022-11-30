@@ -13,11 +13,13 @@ class LiveBetsTableViewCell: UITableViewCell{
     @IBOutlet weak var BetText: UILabel!
     @IBOutlet weak var BetImage: UIImageView!
     
-    func setBet(bet: Bet){
+    func setBet(bet: Bet)
+    {
         self.bet = bet;
-        let resultString: String = "\(bet.team1) vs. \(bet.team2), Bet: \(bet.betType), Amount Bet: \(bet.betAmount), Payout: \(bet.payout)";
+        let resultString: String = "\(bet.team1) vs. \(bet.team2)\nBet: \(bet.betType)\nAmount Bet: \(bet.betAmount)\nPayout: \(bet.payout.rounded())";
         BetText.text = resultString;
-        BetText.numberOfLines = 0;
+        //BetText.numberOfLines = 4;
+        
         /*
         if(bet.betOver == true && bet.betWon == true){
             BetImage.image = UIImage(systemName: "checkmark.circle.fill")
