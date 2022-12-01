@@ -9,13 +9,19 @@ import Foundation
 import UIKit
 
 class ProfileController: UIViewController {
-
+    
+    let db: SQLiteDatabase = try! SQLiteDatabase.open(path: dbPath!)
     @IBOutlet weak var ProfilePicture: UIImageView!
     @IBAction func BackButton(_ sender: Any) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        do {
+          try db.createTable(table: Bet.self)
+        } catch {
+          print(db.errorMessage)
+        }
         initProfilePicture()
         downloadFootballJSON
         {

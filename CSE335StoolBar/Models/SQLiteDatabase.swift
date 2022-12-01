@@ -8,6 +8,16 @@
 import Foundation
 import SQLite3
 
+let dbURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+private enum Database: String {
+  case db
+  
+  var path: String? {
+    return dbURL?.appendingPathComponent("\(self.rawValue).sqlite").relativePath
+  }
+}
+public let dbPath = Database.db.path
+
 enum SQLiteError: Error {
   case OpenDatabase(message: String)
   case Prepare(message: String)
@@ -45,7 +55,7 @@ class SQLiteDatabase {
         }
       }
     }
-    fileprivate var errorMessage: String {
+    var errorMessage: String {
       if let errorPointer = sqlite3_errmsg(dbPointer) {
         let errorMessage = String(cString: errorPointer)
         return errorMessage
@@ -102,7 +112,7 @@ extension SQLiteDatabase {
 }
 extension SQLiteDatabase {
     func insertBet(bet: Bet) throws {
-        let insertSql = "INSERT INTO Bet (team1, team2, gameDateTime, odds, betType, betAmount, payout, betOver, betWon, betID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
+        let insertSql = "INSERT INTO Bet VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"
         let insertStatement = try prepareStatement(sql: insertSql)
         defer {
             sqlite3_finalize(insertStatement)
@@ -188,10 +198,59 @@ extension SQLiteDatabase {
         if (betWon == 1){
             boolBetWon = true
         }
-        return Bet(Team1: team1 as String, Team2: team2 as String, GameDateTime: gameDateTime as String, Odds: odds, BetType: betType as String, BetAmount: betAmount, Payout: payout, BetOver: boolBetOver, BetWon: boolBetWon, BetID: Int(betID))
+        return Bet(Team1: team1 as String, Team2: team2 as String, GameDateTime: gameDateTime as String, Odds: odds, BetType: betType as String, BetAmount: betAmount, Payout: payout, BetOver: boolBetOver, BetWon: boolBetWon, ID: Int(betID))
     }
 }
-
+extension SQLiteDatabase {
+    func makeBetArray() -> [Bet]{
+        var betArray: [Bet] = []
+        let querySql = "SELECT * FROM Bet"
+        guard let queryStatement = try? prepareStatement(sql: querySql) else {
+            return []
+        }
+        defer {
+            sqlite3_finalize(queryStatement)
+        }
+        while (sqlite3_step(queryStatement) == SQLITE_ROW){
+            guard let queryResultCol1 = sqlite3_column_text(queryStatement, 0) else {
+                print("Query result is nil.")
+                return []
+            }
+            guard let queryResultCol2 = sqlite3_column_text(queryStatement, 1) else {
+                print("Query result is nil.")
+                return []
+            }
+            guard let queryResultCol3 = sqlite3_column_text(queryStatement, 2) else {
+                print("Query result is nil.")
+                return []
+            }
+            let odds = sqlite3_column_double(queryStatement, 3)
+            guard let queryResultCol5 = sqlite3_column_text(queryStatement, 4) else {
+                print("Query result is nil.")
+                return []
+            }
+            let betAmount = sqlite3_column_double(queryStatement, 5)
+            let payout = sqlite3_column_double(queryStatement, 6)
+            let betOver = sqlite3_column_int(queryStatement, 7)
+            let betWon = sqlite3_column_int(queryStatement, 8)
+            let betID = sqlite3_column_int(queryStatement, 9)
+            let team1 = String(cString: queryResultCol1) as NSString
+            let team2 = String(cString: queryResultCol2) as NSString
+            let gameDateTime = String(cString: queryResultCol3) as NSString
+            let betType = String(cString: queryResultCol5) as NSString
+            var boolBetOver = false
+            var boolBetWon = false
+            if (betOver == 1){
+                boolBetOver = true
+            }
+            if (betWon == 1){
+                boolBetWon = true
+            }
+            betArray.append(Bet(Team1: team1 as String, Team2: team2 as String, GameDateTime: gameDateTime as String, Odds: odds, BetType: betType as String, BetAmount: betAmount, Payout: payout, BetOver: boolBetOver, BetWon: boolBetWon, ID: Int(betID)))
+        }
+        return betArray
+    }
+}
 
 
 

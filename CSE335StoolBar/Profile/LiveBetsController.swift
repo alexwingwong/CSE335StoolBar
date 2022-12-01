@@ -56,6 +56,5 @@ class LiveBetsController: UITableViewController {
     static func addBet(newBet: Bet){
         //bets.append(newBet);
         LiveBetsController.bets.append(newBet);
-
     }
 }
