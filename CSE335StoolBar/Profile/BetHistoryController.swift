@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 class BetHistoryController: UITableViewController {
-    
+    let db: SQLiteDatabase = try! SQLiteDatabase.open(path: dbPath!)
     var bets: [Bet] = [];
+    var betArray: [Bet] = []
     
     @IBOutlet var BetHistoryTableView: UITableView!
     
@@ -18,6 +19,7 @@ class BetHistoryController: UITableViewController {
         super.viewDidLoad()
         
         bets = initDummyData();
+        betArray = db.makeBetArray()
         //BetHistoryController.delegate = self;
         //BetHistoryController.dataSource = self;
     }
@@ -38,11 +40,11 @@ class BetHistoryController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bets.count;
+        return betArray.count;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let bet = bets[indexPath.row];
+        let bet = betArray[indexPath.row]
         
         let cell = BetHistoryTableView.dequeueReusableCell(withIdentifier: "BetHistoryTableViewCell") as! BetHistoryTableViewCell
         

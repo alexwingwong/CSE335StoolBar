@@ -8,7 +8,7 @@
 import UIKit
 
 class FootballTableViewCell: UITableViewCell {
-    
+    let db: SQLiteDatabase = try! SQLiteDatabase.open(path: dbPath!)
     weak var game: Game?;
     var betCount: Int = Int.random(in: 0...100000)
 
@@ -57,6 +57,7 @@ class FootballTableViewCell: UITableViewCell {
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.spreadOdds1) + betValue
         let newBet = generateBet(inputgame: game!, inputOdds: game!.spreadOdds1, inputBetType: game!.spreadString1, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
+        try! db.insertBet(bet: newBet)
     }
     
     @objc func spread2Button(_ sender:UIButton!){
@@ -73,6 +74,7 @@ class FootballTableViewCell: UITableViewCell {
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.spreadOdds2) + betValue
         let newBet = generateBet(inputgame: game!, inputOdds: game!.spreadOdds2, inputBetType: game!.spreadString2, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
+        try! db.insertBet(bet: newBet)
     }
     
     @objc func money1Button(_ sender:UIButton!){
@@ -89,6 +91,7 @@ class FootballTableViewCell: UITableViewCell {
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.moneyOdds1) + betValue
         let newBet = generateBet(inputgame: game!, inputOdds: game!.moneyOdds1, inputBetType: game!.moneyString1, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
+        try! db.insertBet(bet: newBet)
     }
     
     @objc func money2Button(_ sender:UIButton!){
@@ -104,6 +107,7 @@ class FootballTableViewCell: UITableViewCell {
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.moneyOdds2) + betValue
         let newBet = generateBet(inputgame: game!, inputOdds: game!.moneyOdds2, inputBetType: game!.moneyString2, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
+        try! db.insertBet(bet: newBet)
     }
     
     @objc func overButton(_ sender:UIButton!){
@@ -119,6 +123,7 @@ class FootballTableViewCell: UITableViewCell {
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.overOdds) + betValue
         let newBet = generateBet(inputgame: game!, inputOdds: game!.overOdds, inputBetType: game!.overString, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
+        try! db.insertBet(bet: newBet)
     }
     
     @objc func underButton(_ sender:UIButton!){
@@ -135,6 +140,7 @@ class FootballTableViewCell: UITableViewCell {
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.underOdds) + betValue
         let newBet = generateBet(inputgame: game!, inputOdds: game!.underOdds, inputBetType: game!.underString, inputBetAmount: betValue, inputBetPayout: betPayout)
         LiveBetsController.addBet(newBet: newBet);
+        try! db.insertBet(bet: newBet)
     }
 
     func calcBetPayout(betAmount: Double, odds: Double) -> Double{
