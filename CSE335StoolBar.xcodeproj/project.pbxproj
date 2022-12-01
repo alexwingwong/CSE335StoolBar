@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		114D9A3A2931F5EA00DE8A49 /* FootballGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114D9A392931F5EA00DE8A49 /* FootballGames.swift */; };
 		115C7E8D2936FE2C00EB5A75 /* BasketballGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C7E8C2936FE2C00EB5A75 /* BasketballGames.swift */; };
+		BABF245C293821B900AD017B /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF245B293821B900AD017B /* SQLiteDatabase.swift */; };
 		C448913A2927171800485FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44891392927171800485FCB /* AppDelegate.swift */; };
 		C448913C2927171800485FCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448913B2927171800485FCB /* SceneDelegate.swift */; };
 		C448913E2927171800485FCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C448913D2927171800485FCB /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		114D9A392931F5EA00DE8A49 /* FootballGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballGames.swift; sourceTree = "<group>"; };
 		115C7E8C2936FE2C00EB5A75 /* BasketballGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballGames.swift; sourceTree = "<group>"; };
+		BABF245B293821B900AD017B /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		C44891362927171800485FCB /* CSE335StoolBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE335StoolBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44891392927171800485FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C448913B2927171800485FCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A7435429299365008F9356 /* ProfileModel.swift */,
+				BABF245B293821B900AD017B /* SQLiteDatabase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				C448913A2927171800485FCB /* AppDelegate.swift in Sources */,
 				115C7E8D2936FE2C00EB5A75 /* BasketballGames.swift in Sources */,
 				C4660F8E29281A6C00CBF209 /* FootballController.swift in Sources */,
+				BABF245C293821B900AD017B /* SQLiteDatabase.swift in Sources */,
 				C4660F9229281ECC00CBF209 /* Bet.swift in Sources */,
 				C448913C2927171800485FCB /* SceneDelegate.swift in Sources */,
 				C44891442927171800485FCB /* CSE335StoolBar.xcdatamodeld in Sources */,
