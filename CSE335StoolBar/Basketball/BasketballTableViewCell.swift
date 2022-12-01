@@ -10,7 +10,7 @@ import UIKit
 class BasketballTableViewCell: UITableViewCell {
     
     weak var game: Game?;
-    var betCount: Int = 100
+    var betCount: Int = Int.random(in: 0...100000)
 
     @IBOutlet weak var GameTitle: UILabel!
     
@@ -55,9 +55,6 @@ class BasketballTableViewCell: UITableViewCell {
         }
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.spreadOdds1)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.spreadOdds1, inputBetType: game!.spreadString1, inputBetAmount: betValue, inputBetPayout: betPayout)
-        newBet.betID = betCount
-        betCount = betCount + 1
-        print(newBet.betID)
         LiveBetsController.addBet(newBet: newBet);
     }
     
@@ -74,9 +71,6 @@ class BasketballTableViewCell: UITableViewCell {
         }
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.spreadOdds2)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.spreadOdds2, inputBetType: game!.spreadString2, inputBetAmount: betValue, inputBetPayout: betPayout)
-        newBet.betID = betCount
-        betCount = betCount + 1
-        print(newBet.betID)
         LiveBetsController.addBet(newBet: newBet);
     }
     
@@ -93,9 +87,6 @@ class BasketballTableViewCell: UITableViewCell {
         }
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.moneyOdds1)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.moneyOdds1, inputBetType: game!.moneyString1, inputBetAmount: betValue, inputBetPayout: betPayout)
-        newBet.betID = betCount
-        betCount = betCount + 1
-        print(newBet.betID)
         LiveBetsController.addBet(newBet: newBet);
     }
     
@@ -111,9 +102,6 @@ class BasketballTableViewCell: UITableViewCell {
         }
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.moneyOdds2)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.moneyOdds2, inputBetType: game!.moneyString2, inputBetAmount: betValue, inputBetPayout: betPayout)
-        newBet.betID = betCount
-        betCount = betCount + 1
-        print(newBet.betID)
         LiveBetsController.addBet(newBet: newBet);
     }
     
@@ -129,9 +117,6 @@ class BasketballTableViewCell: UITableViewCell {
         }
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.overOdds)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.overOdds, inputBetType: game!.overString, inputBetAmount: betValue, inputBetPayout: betPayout)
-        newBet.betID = betCount
-        betCount = betCount + 1
-        print(newBet.betID)
         LiveBetsController.addBet(newBet: newBet);
     }
     
@@ -148,9 +133,6 @@ class BasketballTableViewCell: UITableViewCell {
         
         let betPayout = calcBetPayout(betAmount: betValue, odds: game!.underOdds)
         let newBet = generateBet(inputgame: game!, inputOdds: game!.underOdds, inputBetType: game!.underString, inputBetAmount: betValue, inputBetPayout: betPayout)
-        newBet.betID = betCount
-        betCount = betCount + 1
-        print(newBet.betID)
         LiveBetsController.addBet(newBet: newBet);
     }
 
@@ -197,7 +179,9 @@ class BasketballTableViewCell: UITableViewCell {
     }
     
     func generateBet(inputgame: Game, inputOdds: Double, inputBetType: String, inputBetAmount: Double, inputBetPayout: Double) -> Bet{
-        let result = Bet(Team1: inputgame.team1, Team2: inputgame.team2, GameDateTime: inputgame.gameDateTime, Odds: inputOdds, BetType: inputBetType, BetAmount: inputBetAmount, Payout: inputBetPayout, BetOver: false, BetWon: false);
+        let result = Bet(Team1: inputgame.team1, Team2: inputgame.team2, GameDateTime: inputgame.gameDateTime, Odds: inputOdds, BetType: inputBetType, BetAmount: inputBetAmount, Payout: inputBetPayout, BetOver: false, BetWon: false, ID: betCount);
+        betCount = betCount + 1
+        print(result.betID)
         return result;
     }
 }
